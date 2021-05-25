@@ -1,0 +1,61 @@
+[package]
+name = "template"
+version = "0.1.0"
+authors = ["linc2046"]
+edition = "2018"
+
+[[bin]]
+name = "template_cli"
+path = "src/bin.rs"
+
+[lib]
+name = "template_lib"
+path = "src/lib.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dev-dependencies]
+criterion = "0.3.4"
+
+# https://doc.rust-lang.org/1.7.0/book/benchmark-tests.html
+[[bench]]
+name = "template_benchmark"
+harness = false
+
+[dependencies]
+num = "0.3.0"
+regex = "1.4.1"
+time = "0.1"
+chrono = "0.4"
+itertools = "0.9"
+serde_json = "1.0.40"
+serde = { version = "1.0.100", features = ["derive"] }
+lazy_static = "1.4.0"
+
+# async
+rayon = "1.5"
+threadpool = "1.8.1"
+crossbeam = "0.8.0"
+parking_lot = "0.6"
+tokio = { version = "0.3.2", features = ["full"] }
+
+# io/http
+glob = "0.3.0"
+reqwest = { version = "0.10.8", features = ["blocking", "json"] }
+
+# log/error
+slog = "2.5.2"
+error-chain = "0.12.4"
+
+# cli
+clap = "2.33.3"
+
+# test
+proptest = "0.10.1"
+
+# misc
+libloading = "0.5"
+# jemallocator = "0.3.2"
+
+# [global_allocator]
+# jemalloc-ctl = "0.3.3"
